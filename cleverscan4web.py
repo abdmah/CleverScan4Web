@@ -16,7 +16,7 @@ port = input("Enter the port of the Web Site : ")
 
 wich_protocol = input("Wich protocol ? http or https ? ")
 
-if wich
+if wich_protocol
 # Exemple : feroxbuster -u http://10.129.234.47:3000  -w /usr/share/wordlists/rockyou.txt
 feroxbuster -u http:// 
 
