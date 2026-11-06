@@ -19,16 +19,30 @@ port = input("Enter the port of the Web Site : ")
 url = f"http://{target_domain}:{port}"
 
 url_ssl=f"https://{target_domain}:{port}"
+
 # Exemple : feroxbuster -u http://10.129.234.47:3000  -w /usr/share/wordlists/rockyou.txt
 
 if wich_protocol == 1:
     out_ferox= subprocess.run(["feroxbuster", "-u", url], capture_output=True, text=True, check=True)
     print(out_ferox.stdout)
+
+    out_dirsearch= subprocess.run(["dirsearch", "-u", url], capture_output=True, text=True, check=True)
+    print(out_dirsearch.stdout)
+
 elif wich_protocol == 2:
     out_ferox= subprocess.run(["feroxbuster", "-u", url_ssl], capture_output=True, text=True, check=True)
     print(out_ferox.stdout)
+
+    
+    out_dirsearch= subprocess.run(["dirsearch", "-u", url_ssl], capture_output=True, text=True, check=True)
+    print(out_dirsearch.stdout)
+
 else:
     print("Please enter 1 or 2")
+
+
+
+
 
 
 
